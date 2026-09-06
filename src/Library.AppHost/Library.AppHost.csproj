@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="13.5.3" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+    <NoWarn>$(NoWarn);ASPIRE010</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Api\Library.Api.csproj" />
+    <ProjectReference Include="..\Library.DbMigrator\Library.DbMigrator.csproj" />
+    <ProjectReference Include="..\Library.Service\Library.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+  </ItemGroup>
+
+  <!-- Aspire.Hosting.AppHost.props normally contributes these implicit usings, but on a parallel
+       build from a clean tree that import is not always in effect when the global usings file is
+       generated, which breaks the build. Declaring them here keeps the AppHost building either way. -->
+  <ItemGroup>
+    <Using Include="Aspire.Hosting" />
+    <Using Include="Aspire.Hosting.ApplicationModel" />
+  </ItemGroup>
+
+</Project>
