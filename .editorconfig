@@ -1,0 +1,45 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.cs]
+indent_size = 4
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_prefer_braces = true:warning
+dotnet_sort_system_directives_first = true
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+dotnet_diagnostic.IDE0005.severity = warning
+dotnet_diagnostic.IDE0055.severity = warning
+
+# LoggerMessage delegates are noise at this size.
+dotnet_diagnostic.CA1848.severity = none
+dotnet_diagnostic.CA1873.severity = none
+
+# Nothing consumes these assemblies from another language.
+dotnet_diagnostic.CA1716.severity = none
+
+# Result<T>.Success and Result<T>.Failure are the type's own factories.
+dotnet_diagnostic.CA1000.severity = none
+
+[**/obj/**]
+generated_code = true
+
+[**/bin/**]
+generated_code = true
+
+# Test names are Method_Scenario_Outcome sentences.
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none
+
+# EF Core writes the migrations; only the snapshots carry an auto-generated header.
+[src/Library.Migrations/{Catalog,Lending}/*.cs]
+generated_code = true

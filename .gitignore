@@ -1,0 +1,31 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.swp
+.vs/
+.idea/
+*.DotSettings.user
+TestResults/
+coverage/
+*.coverage
+*.trx
+
+# Editor folders and local notes
+.*/
+!.github/
+!.config/
+/*.md
+!/README.md
+
+# Secrets and local overrides
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+
+# OS
+.DS_Store
