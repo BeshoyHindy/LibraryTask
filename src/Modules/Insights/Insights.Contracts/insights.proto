@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package library.insights.v1;
+
+option csharp_namespace = "Insights.Contracts.Grpc";
+
+import "google/type/date.proto";
+
+service InsightsService {
+  rpc GetMostBorrowedBooks(GetMostBorrowedBooksRequest) returns (GetMostBorrowedBooksResponse);
+  rpc GetTopBorrowers(GetTopBorrowersRequest) returns (GetTopBorrowersResponse);
+  rpc GetReadingPace(GetReadingPaceRequest) returns (GetReadingPaceResponse);
+  rpc GetAlsoBorrowedBooks(GetAlsoBorrowedBooksRequest) returns (GetAlsoBorrowedBooksResponse);
+}
+
+message GetMostBorrowedBooksRequest {
+  optional google.type.Date from = 1;
+  optional google.type.Date to = 2;
+  int32 limit = 3;
+}
+
+message MostBorrowedBook {
+  int32 book_id = 1;
+  string title = 2;
+  string author = 3;
+  int32 loan_count = 4;
+}
+
+message GetMostBorrowedBooksResponse {
+  repeated MostBorrowedBook books = 1;
+}
+
+message GetTopBorrowersRequest {
+  google.type.Date from = 1;
+  google.type.Date to = 2;
+  int32 limit = 3;
+}
+
+message TopBorrower {
+  int32 borrower_id = 1;
+  string name = 2;
+  int32 loan_count = 3;
+}
+
+message GetTopBorrowersResponse {
+  repeated TopBorrower borrowers = 1;
+}
+
+message GetReadingPaceRequest {
+  int32 borrower_id = 1;
+}
+
+message GetReadingPaceResponse {
+  int32 borrower_id = 1;
+  double pages_per_day = 2;
+  int32 closed_loans = 3;
+}
+
+message GetAlsoBorrowedBooksRequest {
+  int32 book_id = 1;
+  int32 limit = 2;
+}
+
+message AlsoBorrowedBook {
+  int32 book_id = 1;
+  string title = 2;
+  string author = 3;
+  int32 borrower_count = 4;
+}
+
+message GetAlsoBorrowedBooksResponse {
+  repeated AlsoBorrowedBook books = 1;
+}
