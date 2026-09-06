@@ -1,15 +1,18 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Library.Migrations/Library.Migrations.csproj" />
     <Project Path="src/Library.Shared/Library.Shared.csproj" />
     <Project Path="src/Library.Warmup/Library.Warmup.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Catalog/">
+    <Project Path="src/Modules/Catalog/Catalog/Catalog.csproj" />
     <Project Path="src/Modules/Catalog/Catalog.Contracts/Catalog.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Insights/">
     <Project Path="src/Modules/Insights/Insights.Contracts/Insights.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Lending/">
+    <Project Path="src/Modules/Lending/Lending/Lending.csproj" />
     <Project Path="src/Modules/Lending/Lending.Contracts/Lending.Contracts.csproj" />
   </Folder>
   <Folder Name="/tests/">

@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Library.Shared\Library.Shared.csproj" />
     <ProjectReference Include="..\..\src\Library.Warmup\Library.Warmup.csproj" />
+    <ProjectReference Include="..\..\src\Modules\Lending\Lending\Lending.csproj" />
   </ItemGroup>
 
   <ItemGroup>
