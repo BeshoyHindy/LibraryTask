@@ -9,6 +9,7 @@
     <Project Path="src/Modules/Catalog/Catalog.Contracts/Catalog.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Insights/">
+    <Project Path="src/Modules/Insights/Insights/Insights.csproj" />
     <Project Path="src/Modules/Insights/Insights.Contracts/Insights.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/Modules/Lending/">
