@@ -20,6 +20,7 @@
     <Project Path="src/Modules/Lending/Lending.Contracts/Lending.Contracts.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/Library.ArchitectureTests/Library.ArchitectureTests.csproj" />
     <Project Path="tests/Library.FunctionalTests/Library.FunctionalTests.csproj" />
     <Project Path="tests/Library.IntegrationTests/Library.IntegrationTests.csproj" />
     <Project Path="tests/Library.SystemTests/Library.SystemTests.csproj" />
