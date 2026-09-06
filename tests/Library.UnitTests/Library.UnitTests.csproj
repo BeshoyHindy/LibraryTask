@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Library.Api\Library.Api.csproj" />
     <ProjectReference Include="..\..\src\Library.Shared\Library.Shared.csproj" />
     <ProjectReference Include="..\..\src\Library.Warmup\Library.Warmup.csproj" />
     <ProjectReference Include="..\..\src\Modules\Insights\Insights\Insights.csproj" />

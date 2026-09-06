@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Library.Api\Library.Api.csproj" />
     <ProjectReference Include="..\..\src\Library.Migrations\Library.Migrations.csproj" />
     <ProjectReference Include="..\..\src\Library.Service\Library.Service.csproj" />
   </ItemGroup>

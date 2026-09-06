@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Library.Api/Library.Api.csproj" />
     <Project Path="src/Library.DbMigrator/Library.DbMigrator.csproj" />
     <Project Path="src/Library.Migrations/Library.Migrations.csproj" />
     <Project Path="src/Library.Service/Library.Service.csproj" />
@@ -21,6 +22,7 @@
   <Folder Name="/tests/">
     <Project Path="tests/Library.FunctionalTests/Library.FunctionalTests.csproj" />
     <Project Path="tests/Library.IntegrationTests/Library.IntegrationTests.csproj" />
+    <Project Path="tests/Library.SystemTests/Library.SystemTests.csproj" />
     <Project Path="tests/Library.TestSupport/Library.TestSupport.csproj" />
     <Project Path="tests/Library.UnitTests/Library.UnitTests.csproj" />
   </Folder>
