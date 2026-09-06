@@ -1,0 +1,29 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - run: dotnet tool restore
+
+      - run: dotnet build --warnaserror
+
+      - run: dotnet ef migrations has-pending-model-changes --context CatalogDbContext --project src/Library.Migrations --startup-project src/Library.Migrations
+
+      - run: dotnet ef migrations has-pending-model-changes --context LendingDbContext --project src/Library.Migrations --startup-project src/Library.Migrations
+
+      - run: dotnet test --coverage --coverage-output-format cobertura
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: TestResults/*.cobertura.xml
