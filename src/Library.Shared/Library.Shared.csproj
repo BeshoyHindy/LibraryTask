@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="Google.Api.CommonProtos" />
+    <PackageReference Include="Grpc.Core.Api" />
+    <PackageReference Include="Grpc.StatusProto" />
+    <PackageReference Include="Mediator.Abstractions" />
+  </ItemGroup>
+
+</Project>

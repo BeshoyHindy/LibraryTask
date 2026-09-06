@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/Library.Shared/Library.Shared.csproj" />
     <Project Path="src/Library.Warmup/Library.Warmup.csproj" />
   </Folder>
   <Folder Name="/tests/">
