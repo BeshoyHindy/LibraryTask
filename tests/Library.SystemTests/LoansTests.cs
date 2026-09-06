@@ -17,6 +17,17 @@ public sealed class LoansTests(ApiFixture fixture) : IClassFixture<ApiFixture>
     private static readonly DateOnly ReturnedOn = new(2025, 7, 10);
 
     [Fact]
+    public async Task PostLoans_ADateThatIsNotIso_Returns400WithAProblem()
+    {
+        var response = await fixture.PostAsJsonAsync(
+            "/api/loans",
+            new { bookId = 5, borrowerId = BorrowerId, borrowedOn = "6-9-2026" });
+
+        var problem = await response.ProblemAsync(HttpStatusCode.BadRequest);
+        Assert.Equal("The request body could not be read at $.borrowedOn.", problem.Detail);
+    }
+
+    [Fact]
     public async Task PostLoans_AnAvailableBook_Returns201WithTheLoanAndItsLocation()
     {
         var response = await BorrowAsync(bookId: 5);

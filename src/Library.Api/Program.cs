@@ -27,6 +27,11 @@ builder.Services
 
 builder.Services.AddProblemDetails();
 builder.Services.AddExceptionHandler<RpcExceptionHandler>();
+builder.Services.AddExceptionHandler<BadRequestExceptionHandler>();
+
+// Development throws on a malformed body and Production answers an empty 400; throwing in every
+// environment sends both through the handler above.
+builder.Services.Configure<RouteHandlerOptions>(options => options.ThrowOnBadRequest = true);
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 
